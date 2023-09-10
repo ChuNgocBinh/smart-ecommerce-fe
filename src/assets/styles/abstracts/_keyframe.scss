@@ -1,0 +1,39 @@
+@keyframes loading {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 16rem;
+  }
+}
+
+@keyframes showAnimation {
+  0% {
+    top: 2rem;
+    opacity: 0;
+  }
+
+  100% {
+    top: 3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes success {
+  0% {
+    top: -1rem;
+  }
+
+  25% {
+    top: 0rem;
+  }
+
+  50% {
+    top: -1rem;
+  }
+
+  100% {
+    top: 0rem;
+  }
+}

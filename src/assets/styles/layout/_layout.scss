@@ -1,0 +1,230 @@
+@use '../abstracts/variables' as va;
+@use '../abstracts/mediaQuery' as mq;
+
+.l-layout {
+  position: relative;
+  width: 100%;
+  background-color: va.$bg-container;
+  
+  &-loading {
+    position: relative;
+    z-index: 100000000;
+  }
+
+  &-header {
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+  }
+
+  &-container {
+    padding: 0 1rem;
+    display: flex;
+    // padding: 0 1rem;
+    position: relative;
+  }
+
+  &-sidebar {
+    // min-width: 18rem;
+    min-height: 100%;
+    padding: 0rem 0.5rem;
+    background-color: #fff;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
+    z-index: 888;
+    transition: all 0.3s linear;
+
+    @include mq.tablet {
+      display: none;
+    }
+
+    &-container {
+      position: sticky;
+      position: -webkit-sticky;
+      top: 5rem;
+      left: 0;
+      &-box {
+        height: calc(100vh - 5rem);
+        max-height: calc(100vh - 5rem);
+        height: 100%;
+        min-width: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-hidenMenu {
+    min-width: 5rem;
+    transition: all 0.3s linear;
+  }
+
+  &-showMenu {
+    min-width: 18rem;
+    width: 18rem;
+    transition: all 0.3s linear;
+  }
+
+  &-body {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  &-search {
+    height: 4rem;
+    width: 100%;
+    background-color: va.$bg-btn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-form {
+      display: flex;
+      align-items: center;
+      border-radius: 0.3rem;
+
+      &-input {
+        width: 20rem;
+        // border: 1px solid va.$color-input;
+        outline: none;
+        padding: 0 0.8rem;
+        height: 2.5rem;
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        font-size: 1rem;
+        border: none;
+
+        @include mq.tablet {
+          width: auto;
+        }
+      }
+
+      &-btn {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        outline: none;
+        background-color: #fff;
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+        border: none;
+      }
+    }
+  }
+
+  &-content {
+    &-title {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      &-text {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      &-icon {
+        width: 1.3rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-body {
+      padding: 0 1rem;
+    }
+  }
+
+  &-sidebar-mobile{
+    background-color: #fff;
+    position: fixed;
+    height: calc(100vh - 5rem);
+    left: -30rem;
+    transition: all 0.3s linear;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
+    display:  none;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include mq.tablet {
+      display: block;
+    }
+  }
+
+  &-sidebar-mobile-hide{
+    left: 0;
+    transition: all 0.3s linear;
+  }
+
+  &-modal-content {
+    margin-bottom: 1rem;
+  }
+
+  &-modal-avatar {
+    padding: 2rem 0 1rem ;
+    background-color: #ccc;
+    border-radius: 0.3rem;
+    
+    &-dropzone {
+      text-align: center;
+      
+    }
+
+    &-drop{
+      width: 5rem;
+    }
+
+    &-description {
+      padding: 1rem 0;
+    }
+
+    &-select {
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    &-range {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      input {
+        height: 0.5rem;
+        border-radius: 3rem;
+        width: 10rem;
+      }
+
+      &-group {
+        display: flex;
+        align-items: center;
+
+        > div {
+          width: 4rem;
+        }
+      }
+    }
+
+    &-delete {
+      padding: 0.2rem 1rem;
+      border: none;
+      background-color: va.$bg-btn;
+      color: #fff;
+      border-radius: 0.2rem;
+      display: inline;
+      font-size: 0.8rem;
+      margin-left: 1rem; 
+      cursor: pointer;     
+    }
+  }
+}

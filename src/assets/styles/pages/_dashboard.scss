@@ -1,0 +1,39 @@
+.p-dashboard {
+  height: 200vh;
+
+  &-slider {
+    max-width: 70rem;
+    // overflow: hidden;
+    margin: auto;
+  }
+
+  &-category {
+    margin-top: 2rem;
+    background-color: #fff;
+    padding: 1rem;
+
+    &-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        img {
+          width: 10rem;
+        }
+      }
+    }
+
+    
+  }
+}
